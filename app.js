@@ -7,8 +7,8 @@ const {dialog, app, BrowserWindow} = require('electron').remote
 document.getElementById('app-control--help').addEventListener('click', () => {
 	// Create the browser window.
 	helpWindow = new BrowserWindow({
-		width: 500,
-		height: 500,
+		width: 800,
+		height: 800,
 		backgroundColor: '#000',
 		resizable: false,
 		minimizable: true,

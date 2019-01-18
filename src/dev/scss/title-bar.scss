@@ -3,6 +3,7 @@
 .title-bar {
 	display: flex;
 	border-bottom: 1px solid white(0.25);
+	line-height: 1;
 
 	&__app-title {
 		position: relative;
