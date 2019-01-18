@@ -7,10 +7,11 @@ document.getElementById('app-control--exit').addEventListener('click', () => {
 	window.close()
 })
 
-document.addEventListener('click', function (event) {
+// Listen for every click event that happened on a <a> link and open the request
+// in the default browser
+document.addEventListener('click', (event) => {
 	if (event.target.tagName === 'A' && event.target.href.startsWith('http')) {
 		event.preventDefault()
-		console.log(event.target.href)
 		shell.openExternal(event.target.href)
 	}
 })

@@ -20,3 +20,17 @@
 		0 0 2px black(0.15),
 		-25px 0 100px 0 black(0.25) inset;
 }
+
+hr {
+	border: none;
+	border-bottom: 1px solid white(0.25);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		color: white(1);
+	}
+}
