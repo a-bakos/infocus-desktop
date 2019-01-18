@@ -1,7 +1,7 @@
 @import "variables";
 
 .main-content {
-	padding: 5px;
+	padding: 15px;
 
 	&--title {
 		font-size: 1em;
@@ -9,6 +9,14 @@
 
 	&--title-sub {
 		font-size: 1em;
+	}
+
+	&__icons {
+		&--icon {
+			width: 15px;
+			height: auto;
+			opacity: 0.5;
+		}
 	}
 }
 
