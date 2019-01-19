@@ -19,7 +19,8 @@ const windowStateKeeper = require('electron-window-state')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+let mainWindow,
+	tray
 
 function createWindow () {
 	// Get display dimensions
@@ -44,7 +45,8 @@ function createWindow () {
 		resizable: false,
 		minimizable: true,
 		fullscreenable: false,
-		frame: false
+		frame: false,
+		icon: `${__dirname}/images/icon.png`
 	})
 
 	// and load the index.html of the app.
@@ -61,11 +63,16 @@ function createWindow () {
 	})
 }
 
+function createTray() {
+	tray = new Tray(`${__dirname}/images/icon.png`)
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
 	createWindow()
+	createTray()
 })
 
 // Quit when all windows are closed.
