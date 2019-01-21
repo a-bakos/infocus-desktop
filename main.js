@@ -68,7 +68,22 @@ function createTray() {
 	tray.setToolTip('InFocus')
 
 	// Create and add tray menu
-	const trayMenu = new Menu.buildFromTemplate( require( './trayMenu.js' ) )
+	const trayMenu = new Menu.buildFromTemplate([
+	{
+		'label': 'Stop all sounds',
+		click() {
+			const status = true
+			mainWindow.webContents.send('stopAllSounds', status)
+		}
+	},
+	{ 'type': 'separator' },
+	{
+		label: 'GitHub',
+		click () { openLink('https://github.com/a-bakos/infocus-desktop') }
+	},
+	{ 'type': 'separator' },
+	{ 'role': 'quit' }
+	])
 	tray.setContextMenu(trayMenu)
 
 	// Toggle window visibility on tray icon clicks

@@ -3,6 +3,12 @@
 // All of the Node.js APIs are available in this process.
 
 const {dialog, app, BrowserWindow} = require('electron').remote
+const { ipcRenderer } = require('electron')
+
+// Listen to click on the tray menu item
+ipcRenderer.on('stopAllSounds', (event, arg) => {
+	console.log(arg)
+})
 
 document.getElementById('app-control--help').addEventListener('click', () => {
 	// Create the browser window.
