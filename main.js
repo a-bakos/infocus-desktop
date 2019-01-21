@@ -67,6 +67,10 @@ function createTray() {
 	tray = new Tray(`${__dirname}/images/icon.png`)
 	tray.setToolTip('InFocus')
 
+	// Create and add tray menu
+	const trayMenu = new Menu.buildFromTemplate( require( './trayMenu.js' ) )
+	tray.setContextMenu(trayMenu)
+
 	// Toggle window visibility on tray icon clicks
 	tray.on('click', () => {
 		mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
