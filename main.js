@@ -65,6 +65,7 @@ function createWindow () {
 
 function createTray() {
 	tray = new Tray(`${__dirname}/images/icon.png`)
+	tray.setToolTip('InFocus')
 }
 
 // This method will be called when Electron has finished
