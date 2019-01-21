@@ -66,6 +66,11 @@ function createWindow () {
 function createTray() {
 	tray = new Tray(`${__dirname}/images/icon.png`)
 	tray.setToolTip('InFocus')
+
+	// Toggle window visibility on tray icon clicks
+	tray.on('click', () => {
+		mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
+	})
 }
 
 // This method will be called when Electron has finished
