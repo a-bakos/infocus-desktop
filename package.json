@@ -1,7 +1,7 @@
 {
-  "name": "util-app",
+  "name": "InFocus",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A simple desktop app to help you focus or relax.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
