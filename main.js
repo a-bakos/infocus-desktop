@@ -10,6 +10,7 @@ const {
 	Menu,
 	MenuItem,
 	Tray,
+	shell,
 	ipcMain } = electron
 
 // Electron Reload package -- remove this for the production app
@@ -71,7 +72,7 @@ function createTray() {
 	const trayMenu = new Menu.buildFromTemplate([
 		{
 			'label': 'Stop all sounds',
-			'accelerator': 'CommandOrControl+Alt+0',
+			// 'accelerator': 'CommandOrControl+Alt+0', // does not work...
 			click() {
 				const status = true
 				mainWindow.webContents.send('stopAllSounds', status)
@@ -80,7 +81,7 @@ function createTray() {
 		{ 'type': 'separator' },
 		{
 			label: 'GitHub',
-			click () { openLink('https://github.com/a-bakos/infocus-desktop') }
+			click() { shell.openExternal('https://github.com/a-bakos/infocus-desktop') }
 		},
 		{ 'type': 'separator' },
 		{ 'role': 'quit' }
