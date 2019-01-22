@@ -71,10 +71,11 @@ function createTray() {
 	const trayMenu = new Menu.buildFromTemplate([
 	{
 		'label': 'Stop all sounds',
+		'accelerator': 'CommandOrControl+Alt+0',
 		click() {
 			const status = true
 			mainWindow.webContents.send('stopAllSounds', status)
-		}
+		},
 	},
 	{ 'type': 'separator' },
 	{
