@@ -5,9 +5,14 @@
 const {dialog, app, BrowserWindow} = require('electron').remote
 const { ipcRenderer } = require('electron')
 
-// Listen to click on the tray menu item
+// Listen to click on the tray menu item to turn off all sounds at once
 ipcRenderer.on('stopAllSounds', (event, arg) => {
-	console.log(arg)
+	if ( arg === true ) {
+		const activeChannels = document.querySelectorAll( '.sound-selector__sound--active' )
+		for (let i = 0; i < activeChannels.length; i++) {
+			activeChannels[i].click();
+		}
+	}
 })
 
 document.getElementById('app-control--help').addEventListener('click', () => {
