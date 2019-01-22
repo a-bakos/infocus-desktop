@@ -15,6 +15,7 @@ ipcRenderer.on('stopAllSounds', (event, arg) => {
 	}
 })
 
+// Event listener to open a child, Help window
 document.getElementById('app-control--help').addEventListener('click', () => {
 	// Create the browser window.
 	helpWindow = new BrowserWindow({
@@ -37,6 +38,7 @@ document.getElementById('app-control--help').addEventListener('click', () => {
 	helpWindow.webContents.openDevTools()
 })
 
+// Event listener to exit the app. Prompt is any sound is playing.
 document.getElementById('app-control--exit').addEventListener('click', () => {
 	// If any sound is playing, show a dialog box to confirm exit
 	if ( document.querySelector('.sound-selector__sound--active') ) {
@@ -51,6 +53,7 @@ document.getElementById('app-control--exit').addEventListener('click', () => {
 	}
 })
 
+// Handle the play/pause state of a sound.
 function inFocusSound(sound) {
 	let soundToggle = document.getElementById( 'sound-toggle--' + sound )
 	let soundPath = new Audio(__dirname + '/sounds/infocus-' + sound + '.ogg')
@@ -66,6 +69,7 @@ function inFocusSound(sound) {
 	})
 }
 
+// Load the sounds.
 inFocusSound('cafe')
 inFocusSound('garden')
 inFocusSound('night')
