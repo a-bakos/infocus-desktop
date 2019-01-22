@@ -35,7 +35,7 @@ document.getElementById('app-control--help').addEventListener('click', () => {
 		helpWindow = null
 	})
 
-	helpWindow.webContents.openDevTools()
+	//helpWindow.webContents.openDevTools()
 })
 
 // Event listener to exit the app. Prompt is any sound is playing.
