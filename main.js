@@ -14,7 +14,7 @@ const {
 	ipcMain } = electron
 
 // Electron Reload package -- remove this for the production app
-require('electron-reload')(__dirname)
+// require('electron-reload')(__dirname)
 
 const windowStateKeeper = require('electron-window-state')
 
@@ -26,7 +26,7 @@ let mainWindow,
 function createWindow () {
 	// Get display dimensions
 	const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize
-	console.log(width, height)
+	// console.log(width, height)
 
 	const appWidth = 100
 
