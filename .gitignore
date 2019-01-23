@@ -1,7 +1,6 @@
 # Ignored files
 
 # Compiled source files
-build/
 *.map
 assets/build/
 dist/
