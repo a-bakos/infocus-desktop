@@ -4,6 +4,8 @@
 build/
 *.map
 assets/build/
+dist/
+release-builds/
 
 # Packages
 node_modules/
